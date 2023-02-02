@@ -3,9 +3,10 @@
 ```
 Token: jjtech-cicd-java-project: b456c2a171a25724547ec94e344f781724bb99ec
 ```
+### SonarQube Credentials to be used in Maven configuration => Below
 ```
 mvn sonar:sonar \
-  -Dsonar.host.url=http://34.139.108.151:9000 \
+  -Dsonar.host.url=http://35.231.101.201:9000 \
   -Dsonar.login=b456c2a171a25724547ec94e344f781724bb99ec
 ```
 ```
@@ -16,15 +17,15 @@ sonarqube password: admin
 ```
 username: admin
 password: admin
-ip address: 34.73.201.24:8081
-Nexus Master encrypted password: Sb0WUMIN/+UH6NE2WQ0d2fOSH60jbBfWRPCuc33I0/Q=
-Nexus Normal encrypted password: jJUCPqB9LxsHW2RR153vT3dwmaPIJl3I/WOufBTT8/w=
+ip address: 34.139.33.2:8081
+Nexus Master encrypted password: SS/+70MG8EoHpEaLw9XIs10BewaWW+vDYkBnYVtG7s8=
+Nexus Normal encrypted password: J8WafLFt8MEHQYVQ9h7P6Jkj4RkhORk5mbs5E1Ol7e0=
 ```
 ### Maven Credentials
 ```
 username: 
 password: 
-ip address: 35.237.25.180
+ip address: 35.243.159.225
 ```
 ### Ansible Credentials
 ```
@@ -34,9 +35,9 @@ ip address: 35.237.25.180
 ```
 username: admin
 password: admin
-ip address: 35.237.25.180:8080
+ip address: 35.243.159.225:8080
 ```
 ### GitHub Credentials
 ```
-webhook: http://35.237.25.180:8080/github-webhook/
+webhook: http://35.243.159.225:8080/github-webhook/
 ```
