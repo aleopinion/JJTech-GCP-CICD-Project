@@ -144,7 +144,7 @@ Username: mbandiawan@gmail.com
 
 **23 => Mbandi's Oracle account password**
 ```
-Password: JJTech@Accelerate202
+Password: JJTech@Accelerate2021
 ```
 
 **24 => The name for Maven when setting up Maven within Jenkins**
