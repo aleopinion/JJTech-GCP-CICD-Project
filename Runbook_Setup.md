@@ -425,3 +425,30 @@ sudo systemctl status nexus
 ```
 sudo systemctl enable nexus
 ```
+
+**60 => The path where you have the Nexus password**
+```
+/app/sonatype-work/nexus3/admin.password 
+```
+
+**61 => To get the password for Nexus**
+```
+sudo cat /app/sonatype-work/nexus3/admin.password
+```
+
+**62 => Nexus admin password => My Practice**
+```
+d42f5fda-05ff-48b5-94eb-589c0ea56d5a 
+```
+
+**63 => When you setup Webhook within your project in Github**
+```
+http://IP of Jenkins instance:8080/github-webhook/ 
+``` 
+
+**64 => When you setup Webhook within your project in Github....also captured in Runbook.md**
+```
+http://35.237.25.180:8080/github-webhook/
+```
+
+
