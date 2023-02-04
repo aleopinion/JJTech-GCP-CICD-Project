@@ -206,9 +206,10 @@ sudo service sonar chkconfig
 ```
 
 **--------------------------------------------------------------------------------------------------**
-**34 => SonarQube Token generated for my practice section, with Token name = jjtech-cicd-java-project-practice.** 
+**34 => SonarQube Credentials => SonarQube Token generated for my practice section, with Token name = jjtech-cicd-java-project-practice.** 
 **Actual Token details are stored in JJTech-GCP-CICD-Project directory in our Google-Cloud-Platform directory**
 ```
+jjtech-cicd-java-project-practice: 
 d4235f594ebe12a1d409adaa50706a63268c09b4 
 ```
 
@@ -278,18 +279,18 @@ sudo tar -xvf nexus.tar.gz
 ls   
 ```
 
-**42 => To update or rename the Nexus unzipped file. The name is too long. We rename it to "nexus"**
+**44 => To update or rename the Nexus unzipped file. The name is too long. We rename it to "nexus"**
 **So we use the "mv" command to rename a file in linus**
 ```
 sudo mv nexus-3.40.1-01 nexus
 ```
 
-**43 => To confirm your new file after renaming**
+**45 => To confirm your new file after renaming**
 ```
 ls  
 ```
 
-**44 => There is one thing which is a little bit different when it comes to Nexus. When yo are performing**
+**46 => There is one thing which is a little bit different when it comes to Nexus. When yo are performing**
 **the arfact updload to Nexus including your Nexus setup within your local, starting and stoping Nexus, etc,** 
 **you can set it as a "root" user or another user that has root pricileges. But as a root user,** 
 **it not advisable. It is advisable to create a customized user to setup Nexus, because if someone** 
@@ -302,12 +303,12 @@ ls
 sudo adduser nexus OR sudo useradd nexus 
 ```
 
-**45 => To list the users in the home directory so as to check if the newly created user is there**
+**47 => To list the users in the home directory so as to check if the newly created user is there**
 ```
 ls /home 
 ```
 
-**46 => To list the "creator" and "owner" of the nexus file that we downloaded, unzipped and renamed.**
+**48 => To list the "creator" and "owner" of the nexus file that we downloaded, unzipped and renamed.**
 **And it shows up as "root" and "root".Therefore, if you use any other user to manage that nexus**
 **file the way it at this moment, seeing that "root" is the "creator" and the "owner" of the nexus file,** 
 **that process will or fail. Now since we ceated a user called "nexus", we are going to update or change** 
@@ -318,7 +319,7 @@ ls /home
 ls -al
 ```
 
-**47 => This command changes the creator and ownership of the nnexus file from root and root to nexus** 
+**49 => This command changes the creator and ownership of the nnexus file from root and root to nexus** 
 **and nexus. "sudo chown -R" allows you to change a directory's or file's creator and ownership. Where you have** 
 **"nexus:nexus nexus", you are saying that you are changing the creator and ownership of nexus file** 
 **from "root" and "root" to "nexus" and "nexus". You want to do this so that the user will be able to** 
@@ -327,23 +328,23 @@ ls -al
 sudo chown -R nexus:nexus nexus 
 ```
 
-**48 => To re-confirm the "creator" and "owner" of the nexus file after the update**
+**50 => To re-confirm the "creator" and "owner" of the nexus file after the update**
 ```
 ls -al
 ```
 
-**49 => To also change the creator and owner of the sonatype-work file which was downloaded and unzipped** 
+**51 => To also change the creator and owner of the sonatype-work file which was downloaded and unzipped** 
 **with the nexus file from "root" and "root" to "nexus" and "nexus"**
 ```
 sudo chown -R nexus:nexus sonatype-work 
 ```
 
-**50 => To confirm the new creator and the owner of the "sonatype-work" file**
+**52 => To confirm the new creator and the owner of the "sonatype-work" file**
 ```
 ls -al
 ```
 
-**51 => To cd into nexus and into bin directory, and then list the content of bin directory.**
+**53 => To cd into nexus and into bin directory, and then list the content of bin directory.**
 **In the bin directory, there are 2 important files- the "nexus" file and the "nexus.rc" file.**
 **The nexus file is used to start and stop the nexus service while the nexus.rc file is used to**
 **manage the user that will be ued to start and stop nexus. So we need to vi into the nexus.rc**
@@ -352,19 +353,19 @@ ls -al
 cd nexus && cd bin && ls
 ```
 
-**52. To vi into the nexus.rc file and update the file. Since we created a user called "nexus",**
+**54. To vi into the nexus.rc file and update the file. Since we created a user called "nexus",**
 **we need to pass the user to this file so the system can identify the user that will be used to** 
 **manage nexus in this environment and in the entire pipeline. #run_as_user=""  updated to run_as_user="nexus"**
 ```
 sudo vi  nexus.rc
 ```
 
-**53 => Absolute path to the same location as above**
+**55 => Absolute path to the same location as above**
 ```
 sudo vi  /app/nexus/bin/nexus.rc 
 ```
 
-**54 => Specifies the directories which houses files that are used to manage particular services** 
+**56 => Specifies the directories which houses files that are used to manage particular services** 
 **which you can use the service or systemctl utility or cammand to start and stop. We need to also**
 **create the same thing for nexus because at the moment, there is no such nexus service utility** 
 **within this directory. So we need to create it**
@@ -372,13 +373,13 @@ sudo vi  /app/nexus/bin/nexus.rc
 ls /etc/systemd/system 
 ```
 
-**55. To check the status of Nexus before we create and update the service file for Nexus.** 
+**57. To check the status of Nexus before we create and update the service file for Nexus.** 
 **The command will fail because the file does not exit yet**
 ```
 sudo systemctl status nexus
 ```
 
-**55 => To create and update the service utility for nexus and place in the directories for**
+**58 => To create and update the service utility for nexus and place in the directories for**
 **all the service and systemctl service files.The name of the file is called "nexus.service".**
 **Copy and paste the parameters below, save and quit**
 ```
@@ -406,47 +407,47 @@ WantedBy=multi-user.target
 ```
 **---------------------------------------------------------**
 
-**56 => To chect the status of Nexus after ceating the serice file => Active: inactive (dead)**
+**59 => To chect the status of Nexus after ceating the serice file => Active: inactive (dead)**
 ```
 sudo systemctl status nexus 
 ```
 
-**57 => To start the Nexus service**
+**60 => To start the Nexus service**
 ```
 sudo systemctl start nexus 
 ```
 
-**58 => To re-check the status of Nexus service => Active: active (running)**
+**61 => To re-check the status of Nexus service => Active: active (running)**
 ```
 sudo systemctl status nexus
 ```
 
-**59 => To enable the Nexus service and make it persistent**
+**62 => To enable the Nexus service and make it persistent**
 ```
 sudo systemctl enable nexus
 ```
 
-**60 => The path where you have the Nexus password**
+**63 => The path where you have the Nexus password**
 ```
 /app/sonatype-work/nexus3/admin.password 
 ```
 
-**61 => To get the password for Nexus**
+**64 => To get the password for Nexus**
 ```
 sudo cat /app/sonatype-work/nexus3/admin.password
 ```
 
-**62 => Nexus admin password => My Practice**
+**65 => Nexus admin password => My Practice**
 ```
 d42f5fda-05ff-48b5-94eb-589c0ea56d5a 
 ```
 
-**63 => When you setup Webhook within your project in Github**
+**66 => When you setup Webhook within your project in Github**
 ```
 http://IP of Jenkins instance:8080/github-webhook/ 
 ``` 
 
-**64 => When you setup Webhook within your project in Github....also captured in Runbook.md**
+**67 => When you setup Webhook within your project in Github....also captured in Runbook.md**
 ```
 http://35.237.25.180:8080/github-webhook/
 ```
