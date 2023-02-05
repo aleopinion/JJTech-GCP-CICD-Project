@@ -218,7 +218,7 @@ ls
 sudo vi ansible.cfg 
 ```
 
-**33 => To take you to the exact location to update
+**33 => To take you to the exact location to update**
 ```
 :/host_key_checking 
 ```
@@ -226,7 +226,7 @@ sudo vi ansible.cfg
 /host_key_checking
 ```
 
-**33 => To vi into the host file and supply the Ansible "hosts" file the IP addrresses of**
+**34 => To vi into the host file and supply the Ansible "hosts" file the IP addrresses of**
 **the Client nodes that we want Ansible to manage or perform that deployment in. In this case,** 
 **the DEV and the Prod instances are the client servers**
 ```
@@ -248,78 +248,78 @@ internalIP ansible_user=ansadmin ansible_password=ansadmin
 
 **=========>>>>>>>>>>dev and prod setup <<<<<<<<<========**
 
-**34 => To create common username called ansadmin in the client instance**
+**35 => To create common username called ansadmin in the client instance**
 ```
 sudo useradd ansadmin 
 ```
 
-**35 => To create a password for the common username called ansadmin (same as user name)**
+**36 => To create a password for the common username called ansadmin (same as user name)**
 ```
 sudo passwd ansadmin 
 ```
 
-**36 => To vi and update the sshd_config file for password authentication**
+**37 => To vi and update the sshd_config file for password authentication**
 ```
 sudo vi /etc/ssh/sshd_config 
 ```
 
-**37 => To take you to the exact location to update**  
+**38 => To take you to the exact location to update**  
 ```
 :/PasswordAuthentication 
 ```
 
-**38 => To restart service so that the config update can take effect**
+**39 => To restart service so that the config update can take effect**
 ```
 sudo service sshd restart
 ```
 
-**39 => To update the sudoers file for user authorization**
+**40 => To update the sudoers file for user authorization**
 ```
 sudo vi /etc/sudoers 
 ```
 
-**40 => To take you to the exact location to update** 
+**41 => To take you to the exact location to update** 
 ```
 :/wheel or /wheel 
 ```
 
-**41. To add the user to the authorization file**
+**42. To add the user to the authorization file**
 ```
 sudo usermod -aG wheel ansadmin
 ```
 
-**42 => To see that the sudoers file accepted the update**
+**43 => To see that the sudoers file accepted the update**
 ```
 sudo cat /etc/sudoers 
 ```
 
-**43 => To update the client instance with the latest packages (binaries and libraries)** 
+**44 => To update the client instance with the latest packages (binaries and libraries)** 
 **before installing apache tomcat, since apache tomcat needs the latest binaries to function properly**
 ```
 sudo yum update -y 
 ```
 
-**44 => Tried installing tomcat8.5 but was not successful**
+**45 => Tried installing tomcat8.5 but was not successful**
 ```
 sudo yum install tomcat8.5 -y 
 ```
 
-**45 => Installed tomcat**
+**46 => Installed tomcat**
 ``` 
 sudo yum install tomcat -y 
 ```
 
-**46 => To start tomcat**
+**47 => To start tomcat**
 ```
 sudo systemctl start tomcat
 ```
 
-**47 => To enable tomcat so that tomcat can be persistent**
+**48 => To enable tomcat so that tomcat can be persistent**
 ```
 sudo systemctl enable tomcat 
 ```
 
-**48 => To check the status of tomcat**
+**49 => To check the status of tomcat**
 ```
 sudo systemctl status tomcat
 ```
