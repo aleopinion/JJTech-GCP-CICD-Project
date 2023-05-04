@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/3.9.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/3.9.1 http://maven.apache.org/maven-v3_9_1.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -29,11 +29,11 @@
     </site>
     <snapshotRepository>
             <id>nexus</id>
-            <url>http://35.232.245.195:8081/repository/maven-snapshots/</url>
+            <url>http://34.66.24.82:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>nexus</id>
-            <url>http://35.232.245.195:8081/repository/maven-releases/</url>
+            <url>http://34.66.24.82:8081/repository/maven-releases/</url>
         </repository>
   </distributionManagement>
 
